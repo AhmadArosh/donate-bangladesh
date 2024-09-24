@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate To Bangladesh</title>
+    <title>Donate Bangladesh</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://kit.fontawesome.com/13e89fd062.js" crossorigin="anonymous"></script>
@@ -34,19 +34,21 @@
                  </div>
             </div>
         </nav>
-    </header>
-    <!-- main section -->
-    <main class="p-20">
-        <!-- responsive buttons section -->
+        <br>
         <section class="flex justify-center mt-16 mb-8">
             <div>
-   <button class="font-bold text-xl bg-lime-300 px-6 py-3 rounded-lg mr-4">Donation</button>
+   <button id="donate-btn" class="font-bold text-xl bg-lime-300 px-6 py-3 rounded-lg border-2 mr-4">Donation</button>
             </div>
             <div>
-<button class="font-bold text-xl bg-lime-300 px-6 py-3 rounded-lg">History</button>
+<button id="history-btn" class="font-bold text-xl px-6 py-3 rounded-lg border-2">History</button>
             </div>
         </section>
 
+    </header>
+    <!-- main section -->
+    <main id="main" class="p-20">
+        <!-- responsive buttons section -->
+        
         <!-- cards section -->
          <section class="flex items-center justify-between border-2 rounded-lg p-8">
             <div>
@@ -124,6 +126,34 @@
            <br>
            <span class="flex justify-center">
             <button id="close-btn" class="bg-gray-300 text-slate-500 font-bold py-2 px-4 rounded">Close Confirmation</button>
+           </span>
+         </div>
+         </div>
+         <div id="pop-up-2" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border border-gray-200 p-4 px-24 rounded-lg">
+            <h1 class="text-center font-bold text-3xl">Congrats!</h1>
+            <br>
+            <img src="assets/coin.png" alt="Image" class="rounded-full mx-auto w-10 h-10">
+            <br>
+            <p class="text-lg text-gray-800 font-semibold">You have Donated for Humankind</p>
+            <br>
+           <h2 class="text-xl font-bold text-gray-800 text-center">Successfully</h2>
+           <br>
+           <span class="flex justify-center">
+            <button id="close-btn-2" class="bg-gray-300 text-slate-500 font-bold py-2 px-4 rounded">Close Confirmation</button>
+           </span>
+         </div>
+         </div>
+         <div id="pop-up-3" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border border-gray-200 p-4 px-24 rounded-lg">
+            <h1 class="text-center font-bold text-3xl">Congrats!</h1>
+            <br>
+            <img src="assets/coin.png" alt="Image" class="rounded-full mx-auto w-10 h-10">
+            <br>
+            <p class="text-lg text-gray-800 font-semibold">You have Donated for Humankind</p>
+            <br>
+           <h2 class="text-xl font-bold text-gray-800 text-center">Successfully</h2>
+           <br>
+           <span class="flex justify-center">
+            <button id="close-btn-3" class="bg-gray-300 text-slate-500 font-bold py-2 px-4 rounded">Close Confirmation</button>
            </span>
          </div>
          </div>
