@@ -55,11 +55,21 @@ else{
 }
 
 // Transcation Amount //
-
+if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
  const p = document.createElement('p');
  p.innerText = ` ${addMoneyNumber} Taka donated for Flood at Noakhali` ;
  console.log(p)
- document.getElementById('transaction-container').appendChild(p)
+ document.getElementById('transaction-container').appendChild(p) ;
+}
+//  Transaction Time //
+if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
+ const t = document.createElement('t');
+ const now = new Date();
+  const formattedTime = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' });
+  t.innerText = formattedTime;
+  console.log(t)
+  document.getElementById('transaction-container').appendChild(t) ;
+}
 });
 
 // Feni Donations//
@@ -83,16 +93,23 @@ else{
   alert('Please enter a valid donation amount.');
 }
 
-
-
-//  Overall Balance //
-
 // Transcation Amount //
-
+if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
  const p = document.createElement('p');
  p.innerText = ` ${addMoneyNumber} Taka donated for Flood at Feni` ;
  console.log(p)
- document.getElementById('transaction-container').appendChild(p)
+ document.getElementById('transaction-container').appendChild(p) ;
+}
+
+ //  Transaction Time //
+ if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
+ const t = document.createElement('t');
+ const now = new Date();
+  const formattedTime = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' });
+  t.innerText = formattedTime;
+  console.log(t)
+  document.getElementById('transaction-container').appendChild(t) ;
+ }
 });
 // Quota Donations//
 document.getElementById("add-money-btn-3")
@@ -126,9 +143,20 @@ else{
  console.log(p)
  document.getElementById('transaction-container').appendChild(p)
  }
+
+ //  Transaction Time //
+ if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
+ const t = document.createElement('t');
+ const now = new Date();
+  const formattedTime = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' });
+  t.innerText = formattedTime;
+  console.log(t)
+  document.getElementById('transaction-container').appendChild(t) ;
+ }
 });
 
 // Notification //
+if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
 const donateButton = document.getElementById('add-money-btn')
 const popup = document.getElementById('pop-up');
 
@@ -140,8 +168,10 @@ const closeButton = document.getElementById('close-btn');
 closeButton.addEventListener('click', function()  {
   popup.style.display = 'none';
 });
+}
 
 // Notification 2 //
+if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
 const donateButton2 = document.getElementById('add-money-btn-2')
 const popup2 = document.getElementById('pop-up-2');
 
@@ -153,8 +183,10 @@ const closeButton2 = document.getElementById('close-btn-2');
 closeButton2.addEventListener('click', function() {
   popup2.style.display = 'none';
 });
+}
 
 // Notification 3 //
+if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
 const donateButton3 = document.getElementById('add-money-btn-3')
 const popup3 = document.getElementById('pop-up-3');
 
@@ -166,7 +198,6 @@ const closeButton3 = document.getElementById('close-btn-3');
 closeButton3.addEventListener('click', function()  {
   popup3.style.display = 'none';
 });
-
-// History of Transactions//
+}
 
 
