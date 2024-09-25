@@ -13,10 +13,9 @@ if (window.pageYOffset > sticky) {
     navbar.style.top = "0";          
     navbar.style.width = "100%";     
     navbar.style.zIndex = "1000";
-    navbar.style.bottom = 'blur(5px)'; 
     } else {
-    navbar.style.position = "";       
-}
+      navbar.style.position = "";       
+  }
 };
 
 // History Button //
@@ -36,56 +35,32 @@ button1.addEventListener('click', function(){
 // Noakhali Donations//
 
 document.getElementById("add-money-btn")
-
 .addEventListener('click' , function(event){
-
 event.preventDefault();
-
 const addMoney = document.getElementById('donation-input').value ;
-
 const addMoneyNumber = parseFloat(addMoney)
-
 const balance = document.getElementById('noakhali-donation').innerText ;
-
 const balanceNumber = parseFloat(balance)
-
-const NewBalance = addMoneyNumber + balanceNumber ;
-
-document.getElementById('noakhali-donation').innerText = NewBalance
-
-console.log(NewBalance)
-
-//  Overall Balance //
-
-
-
 const overallBalance = document.getElementById('overall-balance').innerText ;
-
 const overallBalanceNumber = parseFloat(overallBalance)
-
-const NewoverallBalanceNumber = overallBalanceNumber - addMoneyNumber ;
-
-document.getElementById('overall-balance').innerText = NewoverallBalanceNumber ;
-
-
-
-// Debugs //
-
-if (NewoverallBalanceNumber < 0 || isNan(addMoneyNumber) || addMoneyNumber
-
-< 0){
-    alert('Insufficient Balance or Invalid Input')
-    event.preventDefault()
+if (addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){ 
+const NewBalance = addMoneyNumber + balanceNumber ;
+document.getElementById('noakhali-donation').innerText = NewBalance
+console.log(NewBalance)
+const NewOverallBalanceNumber = overallBalanceNumber - addMoneyNumber ;
+document.getElementById('overall-balance').innerText = NewOverallBalanceNumber ;
+}
+else{
+  alert('Please enter a valid donation amount.');
 }
 
-else {
+// Transcation Amount //
 
-   
-}
-
+ const p = document.createElement('p');
+ p.innerText = ` ${addMoneyNumber} Taka donated for Flood at Noakhali` ;
+ console.log(p)
+ document.getElementById('transaction-container').appendChild(p)
 });
-
-
 
 // Feni Donations//
 document.getElementById("add-money-btn-2")
@@ -95,21 +70,29 @@ const addMoney = document.getElementById('donation-input-2').value ;
 const addMoneyNumber = parseFloat(addMoney)
 const balance = document.getElementById('feni-donation').innerText ;
 const balanceNumber = parseFloat(balance)
+const overallBalance = document.getElementById('overall-balance').innerText ;
+const overallBalanceNumber = parseFloat(overallBalance)
+if (addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){ 
 const NewBalance = addMoneyNumber + balanceNumber ;
 document.getElementById('feni-donation').innerText = NewBalance
 console.log(NewBalance)
+const NewOverallBalanceNumber = overallBalanceNumber - addMoneyNumber ;
+document.getElementById('overall-balance').innerText = NewOverallBalanceNumber ;
+}
+else{
+  alert('Please enter a valid donation amount.');
+}
+
+
+
 //  Overall Balance //
 
-const overallBalance = document.getElementById('overall-balance').innerText ;
-const overallBalanceNumber = parseFloat(overallBalance)
-const NewoverallBalanceNumber = overallBalanceNumber - addMoneyNumber ;
-document.getElementById('overall-balance').innerText = NewoverallBalanceNumber ;
+// Transcation Amount //
 
-// Debugs //
-if (NewoverallBalanceNumber < 0 || isNaN(addMoneyNumber) || addMoneyNumber < 0){
-alert('Insufficient Balance or Invalid Input')
-event.preventDefault()
-}
+ const p = document.createElement('p');
+ p.innerText = ` ${addMoneyNumber} Taka donated for Flood at Feni` ;
+ console.log(p)
+ document.getElementById('transaction-container').appendChild(p)
 });
 // Quota Donations//
 document.getElementById("add-money-btn-3")
@@ -119,32 +102,42 @@ const addMoney = document.getElementById('donation-input-3').value ;
 const addMoneyNumber = parseFloat(addMoney)
 const balance = document.getElementById('quota-donation').innerText ;
 const balanceNumber = parseFloat(balance)
+const overallBalance = document.getElementById('overall-balance').innerText ;
+const overallBalanceNumber = parseFloat(overallBalance)
+if (addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){ 
 const NewBalance = addMoneyNumber + balanceNumber ;
 document.getElementById('quota-donation').innerText = NewBalance
 console.log(NewBalance)
+const NewOverallBalanceNumber = overallBalanceNumber - addMoneyNumber ;
+document.getElementById('overall-balance').innerText = NewOverallBalanceNumber ;
+}
+else{
+  alert('Please enter a valid donation amount.');
+}
+
+
+
 //  Overall Balance //
 
-const overallBalance = document.getElementById('overall-balance').innerText ;
-const overallBalanceNumber = parseFloat(overallBalance)
-const NewoverallBalanceNumber = overallBalanceNumber - addMoneyNumber ;
-document.getElementById('overall-balance').innerText = NewoverallBalanceNumber ;
-
-// Debugs //
-if (NewoverallBalanceNumber < 0 || isNaN(addMoneyNumber) || addMoneyNumber < 0){
-alert('Insufficient Balance or Invalid Input')
-
-}
+// Transcation Amount //
+ if(addMoneyNumber > 0 && !isNaN(addMoneyNumber) && addMoneyNumber < overallBalanceNumber){
+ const p = document.createElement('p');
+ p.innerText = ` ${addMoneyNumber} Taka donated for Quota Aid` ;
+ console.log(p)
+ document.getElementById('transaction-container').appendChild(p)
+ }
 });
+
 // Notification //
 const donateButton = document.getElementById('add-money-btn')
 const popup = document.getElementById('pop-up');
 
-donateButton.addEventListener('click', () => {
+donateButton.addEventListener('click', function() {
   popup.style.display = 'block';
 });
 const closeButton = document.getElementById('close-btn');
 
-closeButton.addEventListener('click', () => {
+closeButton.addEventListener('click', function()  {
   popup.style.display = 'none';
 });
 
@@ -152,12 +145,12 @@ closeButton.addEventListener('click', () => {
 const donateButton2 = document.getElementById('add-money-btn-2')
 const popup2 = document.getElementById('pop-up-2');
 
-donateButton2.addEventListener('click', () => {
+donateButton2.addEventListener('click', function() {
   popup2.style.display = 'block';
 });
 const closeButton2 = document.getElementById('close-btn-2');
 
-closeButton2.addEventListener('click', () => {
+closeButton2.addEventListener('click', function() {
   popup2.style.display = 'none';
 });
 
@@ -165,12 +158,12 @@ closeButton2.addEventListener('click', () => {
 const donateButton3 = document.getElementById('add-money-btn-3')
 const popup3 = document.getElementById('pop-up-3');
 
-donateButton3.addEventListener('click', () => {
+donateButton3.addEventListener('click', function()  {
   popup3.style.display = 'block';
 });
 const closeButton3 = document.getElementById('close-btn-3');
 
-closeButton3.addEventListener('click', () => {
+closeButton3.addEventListener('click', function()  {
   popup3.style.display = 'none';
 });
 
